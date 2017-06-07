@@ -34,7 +34,7 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'devise', git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'
 gem 'erubis'
-
+gem 'seed_dump', '~> 3.2', '>= 3.2.4'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
