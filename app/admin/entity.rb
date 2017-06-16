@@ -11,11 +11,16 @@ ActiveAdmin.register Entity do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-<<<<<<< Updated upstream
 
-end
-=======
-  permit_params :config
+  permit_params :name, :config, :message
+
+  form do |f|
+    f.inputs do 
+      f.input :name
+      f.input :config, as: :text
+    end
+    f.actions
+  end
 
   index do
     column :id
@@ -23,5 +28,6 @@ end
     column :config
     actions
   end
+
+
 end
->>>>>>> Stashed changes
