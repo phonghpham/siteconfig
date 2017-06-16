@@ -32,7 +32,16 @@ ActiveAdmin.register Entity do
   show do
     attributes_table do
       row :name
-      row :config
+      row water: :config do |e|
+        e.has_water
+      end
+      row gas: :config do |e|
+        e.has_gas
+      end
+      row electric: :config do |e|
+        e.has_electric
+      end
+
     end
   end
 
