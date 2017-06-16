@@ -29,5 +29,11 @@ ActiveAdmin.register Entity do
     actions
   end
 
+  show do
+    attributes_table do
+      row :name
+      row :config
+    end
+  end
 
 end
