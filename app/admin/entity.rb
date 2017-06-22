@@ -1,4 +1,5 @@
 ActiveAdmin.register Entity do
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -25,22 +26,19 @@ ActiveAdmin.register Entity do
   index do
     column :id
     column :name
-    column :config
     actions
   end
 
   show do
     attributes_table do
       row :name
-      row water: :config do |e|
-        e.has_water
+      [:water, :gas, :electric].each do |u|
+        row u do |e|
+          # @row = u
+          e.send("has_#{u}?")
+        end
       end
-      row gas: :config do |e|
-        e.has_gas
-      end
-      row electric: :config do |e|
-        e.has_electric
-      end
+
 
     end
   end
